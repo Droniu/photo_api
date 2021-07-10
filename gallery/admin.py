@@ -1,10 +1,14 @@
 from django.contrib import admin
-
-# Register your models here.
 from .models import Catalog, Photo
+# Register your models here.
 
+class PhotoInline(admin.TabularInline):
+    model = Photo
+
+@admin.register(Catalog)
+class CatalogAdmin(admin.ModelAdmin):
+    inlines = [PhotoInline]
+
+@admin.register(Photo)
 class PhotoAdmin(admin.ModelAdmin):
     pass
-
-admin.site.register(Catalog)
-admin.site.register(Photo, PhotoAdmin)
