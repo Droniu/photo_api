@@ -156,21 +156,19 @@ AUTH_PASSWORD_VALIDATORS = [
 LOGGING = {
     'version': 1,
     'loggers': {
-        'django.server': {
+        'django': {
             'handlers':['file'],
             'level': 'DEBUG',
+            'propagate': True,
         }
     },
     'handlers': {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': './logs/debug.log',
+            'filename': os.path.join(BASE_DIR,'debug.log')
         }
     },
-    'formatters': {
-        
-    }
 }
 
 
