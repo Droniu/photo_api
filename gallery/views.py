@@ -7,6 +7,7 @@ from gallery import serializers
 
 class PhotoList(generics.ListCreateAPIView):
     queryset = Photo.objects.all()
+    lookup_field = 'id'
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
     ]
@@ -14,6 +15,7 @@ class PhotoList(generics.ListCreateAPIView):
     
 class PhotoDetail(generics.RetrieveDestroyAPIView):
     queryset = Photo.objects.all()
+    lookup_field = 'id'
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
     ]
@@ -21,6 +23,7 @@ class PhotoDetail(generics.RetrieveDestroyAPIView):
     
 class CatalogList(generics.ListCreateAPIView):
     queryset = Catalog.objects.all()
+    lookup_field = 'id'
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
     ]
@@ -28,6 +31,7 @@ class CatalogList(generics.ListCreateAPIView):
 
 class CatalogDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Catalog.objects.all()
+    lookup_field = 'id'
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
     ]

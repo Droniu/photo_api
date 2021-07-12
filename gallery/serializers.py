@@ -4,11 +4,7 @@ from .models import Catalog, Photo
 class PhotoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Photo
-        fields = [
-            "id",
-            "catalog",
-            "img"
-        ]
+        fields = '__all__'
 
 class CatalogSerializer(serializers.ModelSerializer):
     class Meta:
