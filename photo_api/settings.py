@@ -14,6 +14,7 @@ from pathlib import Path
 from decouple import config
 import environ
 import os
+import logging
 import rest_framework
 
 # Initialize environment variables
@@ -150,6 +151,27 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+LOGGING = {
+    'version': 1,
+    'loggers': {
+        'django.server': {
+            'handlers':['file'],
+            'level': 'DEBUG',
+        }
+    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': './logs/debug.log',
+        }
+    },
+    'formatters': {
+        
+    }
+}
 
 
 # Internationalization
