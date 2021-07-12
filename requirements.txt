@@ -5,6 +5,7 @@ attrs==21.2.0
 black==21.6b0
 click==8.0.1
 Django==3.2.5
+django-environ==0.4.5
 djangorestframework==3.12.4
 drf-spectacular==0.17.2
 inflection==0.5.1
