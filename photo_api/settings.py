@@ -36,8 +36,8 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG', False)
 
 ALLOWED_HOSTS = [
-    "api.droniu.pl"
-    "www.api.droniu.pl"
+    "api.droniu.pl",
+    "www.api.droniu.pl",
     "localhost"
 ]
 
