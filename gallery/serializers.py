@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Catalog, Photo
+from .models import Catalog, Contact, Photo
 
 class PhotoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -18,3 +18,7 @@ class CatalogSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             "subtitle": {"required": False}
         }
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = '__all__'
