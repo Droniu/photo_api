@@ -42,13 +42,17 @@ class CatalogDetail(generics.RetrieveUpdateDestroyAPIView):
 def formatEmail(name, email, message):
     return "From:{email}\nName:{name}\n\n{message}".format(name=name, email=email, message=message)
 
+
+# i know this is dogshit code but 
+# i needed something quickly to focus
+# on the frontend
 @api_view(['POST'])
 def handleContactForm(request):
     if request.method == 'POST':
-        if (request.POST['phone'] == ""):
+        if (request.GET.get('phone', "") == ""):
             send_mail(
-                    'Message from droniu.pl',
-                    formatEmail(request.POST['name'], request.POST['email'], request.POST['message']),
+                    'droniu.pl - Message from ' + request.data['name'],
+                    formatEmail(request.data['name'], request.data['email'], request.data['message']),
                     None,
                     ['dron.official@yahoo.com'],
                     fail_silently=False,
